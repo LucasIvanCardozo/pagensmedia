@@ -1,32 +1,36 @@
 ---
-import styles from './Process.module.css';
+import styles from './Process.module.css'
 
 const steps = [
   {
     number: '01',
     title: 'Conocemos tu Negocio',
-    description: 'Empezamos con una conversación profunda para entender tus objetivos, tu audiencia y lo que hace único a tu negocio. Definimos juntos el alcance y las expectativas.',
-    duration: '1-2 días'
+    description:
+      'Empezamos con una conversación profunda para entender tus objetivos, tu audiencia y lo que hace único a tu negocio. Definimos juntos el alcance y las expectativas.',
+    duration: '1 día',
   },
   {
     number: '02',
     title: 'Creamos tu Identidad Digital',
-    description: 'Diseñamos wireframes y prototipos interactivos. Recibes propuestas visuales para aprobar antes de escribir una sola línea de código. Iteramos hasta que estés 100% satisfecho.',
-    duration: '5-10 días'
+    description:
+      'Diseñamos wireframes y prototipos interactivos. Recibes propuestas visuales para aprobar antes de escribir una sola línea de código. Iteramos hasta que estés 100% satisfecho.',
+    duration: '1-2 días',
   },
   {
     number: '03',
     title: 'Construimos tu Sitio',
-    description: 'Transformamos los diseños aprobados en un sitio web funcional, rápido y optimizado. Código limpio, SEO integrado y pruebas en múltiples dispositivos.',
-    duration: '7-14 días'
+    description:
+      'Transformamos los diseños aprobados en un sitio web funcional, rápido y optimizado. Código limpio, SEO integrado y pruebas en múltiples dispositivos.',
+    duration: '1-3 días',
   },
   {
     number: '04',
     title: 'Tu Sitio al Mundo',
-    description: 'Configuramos hosting, dominio, analíticas y todo lo necesario. Te capacitamos para gestionar tu contenido y te acompañamos durante los primeros 30 días.',
-    duration: '1-2 días'
-  }
-];
+    description:
+      'Configuramos hosting, dominio, analíticas y todo lo necesario. Te capacitamos para gestionar tu contenido y te acompañamos durante los primeros 30 días.',
+    duration: '1-2 días',
+  },
+]
 ---
 
 <section class={`section ${styles.process}`} id="proceso">
@@ -35,20 +39,22 @@ const steps = [
       <p class={styles.label}>Nuestro Proceso</p>
       <h2 class={styles.title}>De la idea a la realidad en 4 pasos simples</h2>
     </div>
-    
+
     <div class={styles.timeline}>
       <div class={styles.timelineLine}></div>
-      
-      {steps.map((step) => (
-        <div class={styles.step}>
-          <div class={styles.stepNumber}>{step.number}</div>
-          <div class={styles.stepContent}>
-            <h3 class={styles.stepTitle}>{step.title}</h3>
-            <p class={styles.stepDescription}>{step.description}</p>
-            <span class={styles.stepDuration}>{step.duration}</span>
+
+      {
+        steps.map((step) => (
+          <div class={styles.step}>
+            <div class={styles.stepNumber}>{step.number}</div>
+            <div class={styles.stepContent}>
+              <h3 class={styles.stepTitle}>{step.title}</h3>
+              <p class={styles.stepDescription}>{step.description}</p>
+              <span class={styles.stepDuration}>{step.duration}</span>
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </section>
