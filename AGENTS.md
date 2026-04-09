@@ -26,6 +26,7 @@ npm run astro    # Run Astro CLI directly
 ## Component Pattern
 
 Each component uses CSS Modules:
+
 - `Component.astro` imports styles from `./Component.module.css`
 - Classes accessed via `styles.className`
 - Frontmatter uses `---` delimiters
@@ -40,6 +41,7 @@ import styles from './Component.module.css';
 ## Design System
 
 CSS custom properties in `global.css`:
+
 - Gradient: `--gradient-primary` (pink → purple → blue → cyan)
 - Section spacing: `--section-padding-y: 120px` (desktop), `80px` (mobile)
 - Container: `--container-max-width: 1280px`
@@ -53,14 +55,16 @@ CSS custom properties in `global.css`:
 - Site URL: `https://www.pagensmedia.com`
 - `public/sitemap.xml` — submit to Google Search Console
 - `public/robots.txt` — allows all crawlers
-- OG image: `logo.jpg` (400x400px)
+- OG image: `logo.png` (400x400px)
 
 ## Missing from index.astro
 
 The main page (`src/pages/index.astro`) currently includes only:
+
 - Header, Hero, TrustStrip, Services, WhyChooseUs, Process, ContactCTA, Footer
 
 NOT included (present in README but not imported):
+
 - Portfolio
 - Testimonials
 - FAQ
@@ -68,6 +72,7 @@ NOT included (present in README but not imported):
 ## Available Skills
 
 OpenCode skills installed in `.opencode/skills/`:
+
 - `astro/` - Astro framework patterns
 - `accessibility/` - WCAG 2.2 guidelines
 - `seo/` - Search optimization

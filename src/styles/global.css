@@ -108,7 +108,7 @@ html {
 }
 
 body {
-  cursor: url('/logo.png'), auto;
+  cursor: url('/cursor.png'), auto;
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.6;
