@@ -150,7 +150,7 @@ a {
 }
 
 button {
-  cursor: pointer;
+  cursor: url('/pointer.png'), pointer;
   border: none;
   background: none;
 }

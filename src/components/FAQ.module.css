@@ -70,7 +70,7 @@
   color: var(--text-primary);
   background: none;
   border: none;
-  cursor: pointer;
+  cursor: url('/pointer.png'), pointer;
   transition: background var(--transition-fast) var(--ease-out);
 }
 

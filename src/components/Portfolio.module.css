@@ -54,7 +54,7 @@
   border-radius: var(--radius-xl);
   overflow: hidden;
   background: var(--bg-tertiary);
-  cursor: pointer;
+  cursor: url('/pointer.png'), pointer;
 }
 
 .cardImage {
