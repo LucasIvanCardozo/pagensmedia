@@ -1,0 +1,55 @@
+---
+import styles from './Testimonials.module.css';
+
+const testimonials = [
+  {
+    quote: 'PagensMedia entendió exactamente lo que necesitábamos. No solo nos entregaron un sitio web hermoso, sino una herramienta que realmente genera leads. Nuestros clientes ahora nos encuentran más fácil y se convierten más rápido.',
+    name: 'María González',
+    role: 'Directora de Marketing',
+    initials: 'MG'
+  },
+  {
+    quote: 'El proceso fue increíblemente fluido. Nos mantuvieron informados en cada paso y el resultado final superó nuestras expectativas. Nuestro sitio web ahora refleja la calidad premium de nuestros servicios.',
+    name: 'Carlos Méndez',
+    role: 'CEO',
+    initials: 'CM'
+  },
+  {
+    quote: 'Después de trabajar con otras agencias que nos dejaron a medias, PagensMedia fue un alivio. Entregaron a tiempo, el soporte post-lanzamiento ha sido excelente, y los resultados son tangibles: más ventas, menos complicaciones.',
+    name: 'Ana Lucía Vargas',
+    role: 'Fundadora',
+    initials: 'AL'
+  }
+];
+---
+
+<section class={`section ${styles.testimonials}`}>
+  <div class={styles.container}>
+    <div class={styles.sectionHeader}>
+      <p class={styles.label}>Testimonios</p>
+      <h2 class={styles.title}>Lo Que Dicen Nuestros Clientes</h2>
+      <p class={styles.subtitle}>Historias de éxito que nos enorgullecen</p>
+    </div>
+    
+    <div class={styles.grid}>
+      {testimonials.map((testimonial) => (
+        <div class={styles.card}>
+          <svg class={styles.quoteIcon} viewBox="0 0 24 24" fill="currentColor">
+            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+          </svg>
+          <p class={styles.quote}>"{testimonial.quote}"</p>
+          <div class={styles.author}>
+            <div class={styles.avatar}>{testimonial.initials}</div>
+            <div class={styles.authorInfo}>
+              <span class={styles.authorName}>{testimonial.name}</span>
+              <span class={styles.authorRole}>{testimonial.role}</span>
+              <span class={styles.rating}>★★★★★</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <p class={styles.sampleNote}>Estos son ejemplos representativos de testimonios de clientes satisfechos.</p>
+  </div>
+</section>

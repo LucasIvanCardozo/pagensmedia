@@ -1,0 +1,78 @@
+---
+import styles from './FAQ.module.css';
+
+const faqs = [
+  {
+    question: '¿Trabajan con agencias, hoteles e inmobiliarias?',
+    answer: 'Absolutamente. Esos son nuestros nichos principales. Entendemos las necesidades específicas de cada industria: las agencias necesitan sitios que reflejen creatividad, los hoteles necesitan destacar experiencias y facilitar reservas, y las inmobiliarias necesitan captar leads calificados. Adaptamos cada proyecto a tu sector.'
+  },
+  {
+    question: '¿Construyen paneles de administración?',
+    answer: 'Sí, desarrollamos dashboards y admin panels personalizados. Desde gestión de contenido hasta sistemas complejos de reportes y métricas. Creamos interfaces intuitivas que tu equipo podrá usar sin complicaciones, optimizando tus procesos internos.'
+  },
+  {
+    question: '¿Hacen tiendas online o e-commerce?',
+    answer: 'No. Nos enfocamos exclusivamente en sitios web corporativos, landing pages, páginas informativas y admin panels. No desarrollamos tiendas online, carritos de compra ni pasarelas de pago. Si necesitas e-commerce, te recomendamos especialistas en esa área.'
+  },
+  {
+    question: '¿Cuánto tiempo toma un proyecto?',
+    answer: 'Depende de la complejidad. Una landing page puede estar lista en 1-2 semanas, mientras que un sitio web corporativo completo puede tomar 3-4 semanas. Después de la consulta inicial te damos un timeline específico para tu proyecto. Lo importante es que cumplimos los plazos acordados.'
+  },
+  {
+    question: '¿Qué incluye el soporte post-lanzamiento?',
+    answer: 'Incluimos 30 días de soporte prioritario después del lanzamiento. Esto cubre ajustes menores, corrección de errores, y ayuda con preguntas básicas. Después de ese período, ofrecemos planes de mantenimiento mensuales o soporte por horas según necesites.'
+  },
+  {
+    question: '¿Necesito tener todo el contenido listo?',
+    answer: 'No es necesario. Podemos trabajar con lo que tengas y te asesoramos sobre qué contenido necesitas. También podemos recomendarte copywriters y fotógrafos si lo requieres. Lo importante es empezar la conversación y definir juntos el alcance.'
+  }
+];
+---
+
+<section class={`section ${styles.faq}`} id="faq">
+  <div class={styles.container}>
+    <div class={styles.sectionHeader}>
+      <p class={styles.label}>Preguntas Frecuentes</p>
+      <h2 class={styles.title}>Todo lo que necesitas saber antes de empezar</h2>
+    </div>
+    
+    <div class={styles.accordion}>
+      {faqs.map((faq, index) => (
+        <div class={styles.item} data-faq-item>
+          <button class={styles.question} aria-expanded="false" data-faq-question>
+            {faq.question}
+            <svg class={styles.icon} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"/>
+              <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+          </button>
+          <div class={styles.answer}>
+            <p class={styles.answerContent}>{faq.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  // FAQ Accordion functionality
+  document.querySelectorAll('[data-faq-question]').forEach(button => {
+    button.addEventListener('click', () => {
+      const item = button.closest('[data-faq-item]');
+      const isOpen = item?.classList.contains('open');
+      
+      // Close all items
+      document.querySelectorAll('[data-faq-item]').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('[data-faq-question]')?.setAttribute('aria-expanded', 'false');
+      });
+      
+      // Open clicked item if it wasn't open
+      if (!isOpen) {
+        item?.classList.add('open');
+        button.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>

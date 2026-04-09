@@ -1,0 +1,89 @@
+---
+import styles from './Portfolio.module.css';
+
+const projects = [
+  {
+    category: 'Inmobiliaria',
+    title: 'Landing Page para Agencia Premium',
+    description: 'Diseñamos una experiencia de captación de leads para una agencia inmobiliaria de lujo. Resultado: 150% más consultas calificadas en el primer mes.',
+    tags: ['Landing Page', 'Lead Generation', 'Diseño Premium'],
+    icon: 'building'
+  },
+  {
+    category: 'Hotel',
+    title: 'Sitio Web para Boutique Hotel',
+    description: 'Rediseño completo que transmitió la esencia única del hotel. Aumento del 80% en reservas directas y reducción de dependencia de OTAs.',
+    tags: ['Rediseño', 'Booking Directo', 'SEO Local'],
+    icon: 'home'
+  },
+  {
+    category: 'Agencia',
+    title: 'Plataforma de Servicios Digitales',
+    description: 'Sitio web corporativo con sistema de cotización automática. La agencia redujo un 60% el tiempo de respuesta a prospectos.',
+    tags: ['Web Corporativa', 'Automatización', 'UX'],
+    icon: 'briefcase'
+  },
+  {
+    category: 'Admin Panel',
+    title: 'Dashboard para Gestión de Propiedades',
+    description: 'Panel de administración intuitivo que permite gestionar propiedades, leads y reportes en un solo lugar. Ahorro de 15 horas semanales.',
+    tags: ['Dashboard', 'Admin Panel', 'Automatización'],
+    icon: 'layout'
+  }
+];
+---
+
+<section class={`section ${styles.portfolio}`} id="portafolio">
+  <div class={styles.container}>
+    <div class={styles.sectionHeader}>
+      <p class={styles.label}>Proyectos Recientes</p>
+      <h2 class={styles.title}>Resultados que hablan por sí solos</h2>
+    </div>
+    
+    <div class={styles.grid}>
+      {projects.map((project) => (
+        <div class={styles.card}>
+          <div class={styles.cardImage}>
+            <div class={styles.placeholder}>
+              {project.icon === 'building' && (
+                <svg class={styles.placeholderIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-5a2 2 0 0 1 4 0v5"/>
+                </svg>
+              )}
+              {project.icon === 'home' && (
+                <svg class={styles.placeholderIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                  <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+              )}
+              {project.icon === 'briefcase' && (
+                <svg class={styles.placeholderIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                </svg>
+              )}
+              {project.icon === 'layout' && (
+                <svg class={styles.placeholderIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <line x1="3" y1="9" x2="21" y2="9"/>
+                  <line x1="9" y1="21" x2="9" y2="9"/>
+                </svg>
+              )}
+              <span class={styles.placeholderText}>Proyecto {project.category}</span>
+            </div>
+          </div>
+          <div class={styles.overlay}>
+            <span class={styles.category}>{project.category}</span>
+            <h3 class={styles.cardTitle}>{project.title}</h3>
+            <p class={styles.cardDescription}>{project.description}</p>
+            <div class={styles.tags}>
+              {project.tags.map((tag) => (
+                <span class={styles.tag}>{tag}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

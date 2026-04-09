@@ -1,0 +1,80 @@
+---
+import styles from './Footer.module.css';
+---
+
+<footer class={styles.footer}>
+  <div class={styles.container}>
+    <div class={styles.grid}>
+      <div class={styles.brand}>
+        <span class={styles.logo}>PagensMedia</span>
+        <p class={styles.description}>
+          Creamos experiencias digitales que generan resultados reales para agencias, hoteles, inmobiliarias y empresas de servicios.
+        </p>
+        <div class={styles.socials}>
+          <a href="https://instagram.com/pagensmedia" target="_blank" rel="noopener noreferrer" class={styles.socialLink} aria-label="Instagram">
+            <svg class={styles.socialIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="#" class={styles.socialLink} aria-label="LinkedIn">
+            <svg class={styles.socialIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class={styles.column}>
+        <h4 class={styles.columnTitle}>Servicios</h4>
+        <div class={styles.links}>
+          <a href="#servicios" class={styles.link}>Landing Pages</a>
+          <a href="#servicios" class={styles.link}>Sitios Web Corporativos</a>
+          <a href="#servicios" class={styles.link}>Paneles Admin</a>
+          <a href="#servicios" class={styles.link}>Rediseño Web</a>
+        </div>
+      </div>
+      
+      <div class={styles.column}>
+        <h4 class={styles.columnTitle}>Compania</h4>
+        <div class={styles.links}>
+          <a href="#proceso" class={styles.link}>Proceso de Trabajo</a>
+          <a href="#portafolio" class={styles.link}>Portafolio</a>
+          <a href="#faq" class={styles.link}>FAQ</a>
+          <a href="#contacto" class={styles.link}>Contacto</a>
+        </div>
+      </div>
+      
+      <div class={styles.column}>
+        <h4 class={styles.columnTitle}>Contacto</h4>
+        <div class={styles.contactInfo}>
+          <span class={styles.contactItem}>
+            <svg class={styles.contactIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            hola@pagensmedia.com
+          </span>
+          <span class={styles.contactItem}>
+            <svg class={styles.contactIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            Lun - Vie: 9am - 6pm
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    <div class={styles.bottom}>
+      <p class={styles.copyright}>© 2025 PagensMedia. Todos los derechos reservados.</p>
+      <div class={styles.legalLinks}>
+        <a href="#" class={styles.legalLink}>Politica de Privacidad</a>
+        <a href="#" class={styles.legalLink}>Terminos de Servicio</a>
+      </div>
+    </div>
+  </div>
+</footer>

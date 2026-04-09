@@ -1,0 +1,59 @@
+---
+---
+
+<header class="header" id="header">
+  <div class="container">
+    <a href="#" class="logo">PagensMedia</a>
+    
+    <nav class="nav">
+      <div class="navLinks">
+        <a href="#servicios" class="navLink">Servicios</a>
+        <a href="#proceso" class="navLink">Proceso</a>
+        <a href="#portafolio" class="navLink">Portafolio</a>
+        <a href="#faq" class="navLink">FAQ</a>
+      </div>
+      <a href="#contacto" class="ctaButton">Hablemos</a>
+    </nav>
+    
+    <button class="mobileMenuButton" id="mobileMenuButton" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobileNav" id="mobileNav">
+  <a href="#servicios" class="mobileNavLink">Servicios</a>
+  <a href="#proceso" class="mobileNavLink">Proceso</a>
+  <a href="#portafolio" class="mobileNavLink">Portafolio</a>
+  <a href="#faq" class="mobileNavLink">FAQ</a>
+  <a href="#contacto" class="mobileCtaButton">Hablemos</a>
+</div>
+
+<script>
+  // Header scroll effect
+  const header = document.getElementById('header');
+  const mobileMenuButton = document.getElementById('mobileMenuButton');
+  const mobileNav = document.getElementById('mobileNav');
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      header?.classList.add('headerScrolled');
+    } else {
+      header?.classList.remove('headerScrolled');
+    }
+  });
+  
+  // Mobile menu toggle
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileNav?.classList.toggle('mobileNavOpen');
+  });
+  
+  // Close mobile menu on link click
+  document.querySelectorAll('.mobileNavLink, .mobileCtaButton').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav?.classList.remove('mobileNavOpen');
+    });
+  });
+</script>

@@ -1,0 +1,157 @@
+.cta {
+  position: relative;
+  background: var(--bg-dark);
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding-x);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.orb1 {
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 107, 157, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 8s ease-in-out infinite;
+}
+
+.orb2 {
+  position: absolute;
+  bottom: -150px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(155, 89, 182, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 10s ease-in-out infinite reverse;
+}
+
+.orb3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(52, 152, 219, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(30px, -30px);
+  }
+}
+
+.title {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-light);
+  margin-bottom: var(--space-5);
+}
+
+.title span {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: var(--space-10);
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: var(--space-5) var(--space-10);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-light);
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  transition: transform var(--transition-fast) var(--ease-out),
+              box-shadow var(--transition-fast) var(--ease-out);
+  margin-bottom: var(--space-8);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 157, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 20px rgba(255, 107, 157, 0);
+  }
+}
+
+.trustSignals {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-6);
+}
+
+.trustSignal {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.check {
+  width: 18px;
+  height: 18px;
+  color: var(--accent-success);
+}
+
+.contactOptions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-6);
+  margin-top: var(--space-12);
+  padding-top: var(--space-10);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contactOption {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.8);
+  transition: color var(--transition-fast) var(--ease-out);
+}
+
+.contactOption:hover {
+  color: var(--text-light);
+}
+
+.contactIcon {
+  width: 20px;
+  height: 20px;
+  color: var(--accent-cyan);
+}
