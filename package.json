@@ -10,7 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "npm run build && echo 'pagensmedia.com.ar' > dist/CNAME && gh-pages -d dist"
   },
   "dependencies": {
     "astro": "^6.1.5"
