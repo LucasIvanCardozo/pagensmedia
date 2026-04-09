@@ -6,6 +6,12 @@ export interface Props {
 
 const SITE_URL = Astro.site ? Astro.site.toString().replace(/\/$/, '') : 'https://pagensmedia.com.ar';
 
+// Get current path for canonical URL
+const currentPath = Astro.url.pathname;
+const canonicalUrl = currentPath === '/' || currentPath === '' 
+  ? SITE_URL 
+  : `${SITE_URL}${currentPath}`;
+
 const { 
   title = "PagensMedia | Diseño Web Premium para Agencias y Empresas en LATAM",
   description = "Creamos sitios web que convierten visitantes en clientes. Especialistas en landing pages, web corporativa y admin panels para LATAM. Consulta gratis."
@@ -22,13 +28,13 @@ const {
     <meta name="generator" content={Astro.generator} />
     
     <!-- Canonical URL -->
-    <link rel="canonical" href={`${SITE_URL}/`} />
+    <link rel="canonical" href={canonicalUrl} />
     
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={`${SITE_URL}/`} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:locale" content="es_AR" />
     <meta property="og:site_name" content="PagensMedia" />
     <meta property="og:image" content={`${SITE_URL}/logo.jpg`} />
@@ -73,6 +79,7 @@ const {
         "address": {
           "@type": "PostalAddress",
           "addressCountry": "AR",
+          "addressLocality": "Mar del Plata",
           "areaServed": "Latinoamérica"
         }
       })} />
