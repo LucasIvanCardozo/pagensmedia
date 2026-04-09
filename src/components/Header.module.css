@@ -7,9 +7,13 @@
   height: 80px;
   display: flex;
   align-items: center;
-  background: transparent;
-  transition: background var(--transition-normal) var(--ease-out),
-              box-shadow var(--transition-normal) var(--ease-out);
+
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition:
+    background var(--transition-normal) var(--ease-out),
+    box-shadow var(--transition-normal) var(--ease-out);
 }
 
 .headerScrolled {
@@ -89,8 +93,9 @@
   color: var(--text-light);
   background: var(--gradient-primary);
   border-radius: var(--radius-full);
-  transition: transform var(--transition-fast) var(--ease-out),
-              box-shadow var(--transition-fast) var(--ease-out);
+  transition:
+    transform var(--transition-fast) var(--ease-out),
+    box-shadow var(--transition-fast) var(--ease-out);
 }
 
 .ctaButton:hover {
@@ -113,7 +118,9 @@
   width: 24px;
   height: 2px;
   background: var(--text-primary);
-  transition: transform var(--transition-fast), opacity var(--transition-fast);
+  transition:
+    transform var(--transition-fast),
+    opacity var(--transition-fast);
 }
 
 .mobileNav {
@@ -157,11 +164,11 @@
   .navLinks {
     display: none;
   }
-  
+
   .ctaButton {
     display: none;
   }
-  
+
   .mobileMenuButton {
     display: flex;
   }

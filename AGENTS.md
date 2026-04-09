@@ -47,10 +47,13 @@ CSS custom properties in `global.css`:
 
 ## SEO/Metadata
 
-- Language: `lang="es"` (Spanish)
+- Language: `lang="es"` (Spanish, Argentina)
 - Canonical + OG/Twitter meta in `Layout.astro`
-- Structured data: Schema.org `ProfessionalService`
+- Structured data: Schema.org `Organization` + `ProfessionalService` with AggregateRating
 - Site URL: `https://www.pagensmedia.com`
+- `public/sitemap.xml` — submit to Google Search Console
+- `public/robots.txt` — allows all crawlers
+- OG image: `logo.jpg` (400x400px)
 
 ## Missing from index.astro
 

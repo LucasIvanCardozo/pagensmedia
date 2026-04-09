@@ -6,51 +6,43 @@
 
 :root {
   /* Primary Gradient */
-  --gradient-primary: linear-gradient(135deg, 
-    #FF6B9D 0%,
-    #9B59B6 33%,
-    #3498DB 66%,
-    #00D4FF 100%
-  );
-  
-  --gradient-text: linear-gradient(135deg, #FF6B9D, #9B59B6, #3498DB);
-  --gradient-subtle: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
-  --gradient-dark: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  --gradient-primary: linear-gradient(135deg, #ff6b9d 0%, #9b59b6 33%, #3498db 66%, #00d4ff 100%);
+
+  --gradient-text: linear-gradient(135deg, #ff6b9d, #9b59b6, #3498db);
+  --gradient-subtle: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  --gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 
   /* Background Colors */
-  --bg-primary: #FFFFFF;
-  --bg-secondary: #F8FAFC;
-  --bg-tertiary: #F1F5F9;
-  --bg-dark: #0F172A;
-  --bg-dark-secondary: #1E293B;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --bg-dark: #0f172a;
+  --bg-dark-secondary: #1e293b;
 
   /* Text Colors */
-  --text-primary: #0F172A;
+  --text-primary: #0f172a;
   --text-secondary: #475569;
-  --text-tertiary: #94A3B8;
-  --text-light: #FFFFFF;
-  --text-muted: #64748B;
+  --text-tertiary: #94a3b8;
+  --text-light: #ffffff;
+  --text-muted: #64748b;
 
   /* Accent Colors */
-  --accent-pink: #FF6B9D;
-  --accent-purple: #9B59B6;
-  --accent-blue: #3498DB;
-  --accent-cyan: #00D4FF;
-  --accent-success: #10B981;
-  --accent-warning: #F59E0B;
+  --accent-pink: #ff6b9d;
+  --accent-purple: #9b59b6;
+  --accent-blue: #3498db;
+  --accent-cyan: #00d4ff;
+  --accent-success: #10b981;
+  --accent-warning: #f59e0b;
 
   /* Border Colors */
-  --border-light: #E2E8F0;
-  --border-medium: #CBD5E1;
+  --border-light: #e2e8f0;
+  --border-medium: #cbd5e1;
 
   /* Shadow System */
   --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 
-               0 2px 4px -2px rgba(15, 23, 42, 0.04);
-  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 
-               0 4px 6px -4px rgba(15, 23, 42, 0.04);
-  --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 
-               0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
   --shadow-glow: 0 0 40px rgba(155, 89, 182, 0.3);
 
   /* Spacing System (4px base) */
@@ -100,7 +92,9 @@
    CSS RESET
    ============================================ */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -114,6 +108,7 @@ html {
 }
 
 body {
+  cursor: url('/logo.png'), auto;
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.6;
@@ -123,16 +118,29 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
@@ -147,7 +155,8 @@ button {
   background: none;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -197,12 +206,14 @@ ul, ol {
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  
+
   html {
     scroll-behavior: auto;
   }
