@@ -1,21 +1,22 @@
 ---
+import styles from './Header.module.css';
 ---
 
-<header class="header" id="header">
-  <div class="container">
-    <a href="#" class="logo">PagensMedia</a>
-    
-    <nav class="nav">
-      <div class="navLinks">
-        <a href="#servicios" class="navLink">Servicios</a>
-        <a href="#proceso" class="navLink">Proceso</a>
-        <a href="#portafolio" class="navLink">Portafolio</a>
-        <a href="#faq" class="navLink">FAQ</a>
+<header class={styles.header} id="header">
+  <div class={styles.container}>
+    <a href="#" class={styles.logo}>
+          <img src="/logo.jpg" alt="PagensMedia" class={styles.logoImage} />
+        </a>
+
+    <nav class={styles.nav}>
+      <div class={styles.navLinks}>
+        <a href="#servicios" class={styles.navLink}>Servicios</a>
+        <a href="#proceso" class={styles.navLink}>Proceso</a>
       </div>
-      <a href="#contacto" class="ctaButton">Hablemos</a>
+      <a href="https://wa.me/5492235319564" target="_blank" rel="noopener noreferrer" class={styles.ctaButton}>Hablemos</a>
     </nav>
-    
-    <button class="mobileMenuButton" id="mobileMenuButton" aria-label="Toggle menu">
+
+    <button class={styles.mobileMenuButton} id="mobileMenuButton" aria-label="Toggle menu">
       <span></span>
       <span></span>
       <span></span>
@@ -23,37 +24,35 @@
   </div>
 </header>
 
-<div class="mobileNav" id="mobileNav">
-  <a href="#servicios" class="mobileNavLink">Servicios</a>
-  <a href="#proceso" class="mobileNavLink">Proceso</a>
-  <a href="#portafolio" class="mobileNavLink">Portafolio</a>
-  <a href="#faq" class="mobileNavLink">FAQ</a>
-  <a href="#contacto" class="mobileCtaButton">Hablemos</a>
+<div class={styles.mobileNav} id="mobileNav">
+  <a href="#servicios" class={styles.mobileNavLink}>Servicios</a>
+  <a href="#proceso" class={styles.mobileNavLink}>Proceso</a>
+  <a href="https://wa.me/5492235319564" target="_blank" rel="noopener noreferrer" class={styles.mobileCtaButton}>Hablemos</a>
 </div>
 
 <script>
   // Header scroll effect
-  const header = document.getElementById('header');
-  const mobileMenuButton = document.getElementById('mobileMenuButton');
-  const mobileNav = document.getElementById('mobileNav');
-  
+  const header = document.getElementById('header')
+  const mobileMenuButton = document.getElementById('mobileMenuButton')
+  const mobileNav = document.getElementById('mobileNav')
+
   window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
-      header?.classList.add('headerScrolled');
+      header?.classList.add('headerScrolled')
     } else {
-      header?.classList.remove('headerScrolled');
+      header?.classList.remove('headerScrolled')
     }
-  });
-  
+  })
+
   // Mobile menu toggle
   mobileMenuButton?.addEventListener('click', () => {
-    mobileNav?.classList.toggle('mobileNavOpen');
-  });
-  
+    mobileNav?.classList.toggle('mobileNavOpen')
+  })
+
   // Close mobile menu on link click
-  document.querySelectorAll('.mobileNavLink, .mobileCtaButton').forEach(link => {
+  document.querySelectorAll('.mobileNavLink, .mobileCtaButton').forEach((link) => {
     link.addEventListener('click', () => {
-      mobileNav?.classList.remove('mobileNavOpen');
-    });
-  });
+      mobileNav?.classList.remove('mobileNavOpen')
+    })
+  })
 </script>
