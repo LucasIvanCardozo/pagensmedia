@@ -149,8 +149,17 @@ a {
   text-decoration: none;
 }
 
-button {
+a,
+button,
+input,
+textarea,
+select,
+summary,
+[role='button'] {
   cursor: url('/pointer.png'), pointer;
+}
+
+button {
   border: none;
   background: none;
 }
