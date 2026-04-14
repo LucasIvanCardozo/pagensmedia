@@ -31,6 +31,8 @@ import styles from './Header.module.css'
 </div>
 
 <script>
+  import styles from './Header.module.css'
+
   // Header scroll effect
   const header = document.getElementById('header')
   const mobileMenuButton = document.getElementById('mobileMenuButton')
@@ -38,21 +40,21 @@ import styles from './Header.module.css'
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
-      header?.classList.add('headerScrolled')
+      header?.classList.add(styles.headerScrolled)
     } else {
-      header?.classList.remove('headerScrolled')
+      header?.classList.remove(styles.headerScrolled)
     }
   })
 
   // Mobile menu toggle
   mobileMenuButton?.addEventListener('click', () => {
-    mobileNav?.classList.toggle('mobileNavOpen')
+    mobileNav?.classList.toggle(styles.mobileNavOpen)
   })
 
   // Close mobile menu on link click
-  document.querySelectorAll('.mobileNavLink, .mobileCtaButton').forEach((link) => {
+  document.querySelectorAll(`.${styles.mobileNavLink}, .${styles.mobileCtaButton}`).forEach((link) => {
     link.addEventListener('click', () => {
-      mobileNav?.classList.remove('mobileNavOpen')
+      mobileNav?.classList.remove(styles.mobileNavOpen)
     })
   })
 </script>
